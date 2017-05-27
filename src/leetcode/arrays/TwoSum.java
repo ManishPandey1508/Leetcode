@@ -21,7 +21,7 @@ public static void main(String[] args) {
 	
 	int[] input = {2,7,11,15};
 	
-	int result[] = new Solution().twoSum(input, 9);
+	int result[] = new TwoSum().new Solution().twoSum(input, 9);
 	if(result!=null){
 		System.out.println("First Result");
 		System.out.println(result[0]);
@@ -31,7 +31,7 @@ public static void main(String[] args) {
 	}
 		
 	int[] input1 = {3,2,4};
-	result = new Solution().twoSum(input1, 6);
+	result =  new TwoSum().new Solution().twoSum(input1, 6);
 	if(result!=null){
 		System.out.println("Second Result");
 		System.out.println(result[0]);
@@ -42,10 +42,6 @@ public static void main(String[] args) {
 		
 	}
 }
-	
-	
-}
-
 class Solution {
     public int[] twoSum(int[] nums, int target) {
     	
@@ -61,3 +57,7 @@ class Solution {
     	return new int[]{};
     }
 }
+	
+}
+
+
