@@ -11,20 +11,19 @@ Your function should return length = 2, with the first two elements of nums bein
 
 */
 
-//To delete duplicates without using another array, idea is to sort the Array and than run loop and 
-//compare adjacent element and remove duplicates 
-
+// Since all instance of element has to be removed no need of sorting, 
+//just scan all over the array keep one slow pointer and remove the val.
 
 package leetcode.arrays;
-
 
 public class RemoveElement {
 
 	public static void main(String[] args) {
-		int[] nums = {3,2,2,3,3,4,5,9,11,23};
+		int[] nums = { 3, 2, 2, 3 };
 		int val = 3;
-		
-		System.out.println("Length after removing Duplicates" + new RemoveElement().new Solution().removeElement(nums,val));
+
+		System.out.println(
+				"Length after removing Duplicates" + new RemoveElement().new Solution().removeElement(nums, val));
 
 	}
 
@@ -32,55 +31,23 @@ public class RemoveElement {
 
 		public int removeElement(int[] nums, int val) {
 
-			if(nums.length==0){
+			if (nums.length == 0) {
 				System.out.println("Array is empty");
 				return 0;
 			}
-			
-			nums = quicksort(nums);
-			int b = 0;
-			for (int i = 0; i < nums.length; i++) {
-				if(nums[b]!=nums[i]){
-					b++;
-					nums[b]=nums[i];
-				}
-			}
-			return  b+1;
-		}
 
-		private int[] quicksort(final int[] nums) {
-			quicksort(nums, 0, nums.length - 1);
-			return nums;
-		}
-
-		private void quicksort(final int[] nums, final int low, final int high) {
-			int i = low, j = high;
-			int pivot = nums[low + (high - low) / 2];
-			while (i <= j) {
-				while (nums[i] < pivot) {
-					i++;
+			int n = nums.length;
+			int i = 0;
+			while (i < n) {
+				if (nums[i] == val) {
+					nums[i] = nums[n - 1];
+					n--;
 				}
-				while (nums[j] > pivot) {
-					j--;
+				else{
+				i++;
 				}
-				if (i <= j) {
-					swap(nums, i, j);
-					i++;
-					j--;
-				}
-			}
-			if (low < j) {
-				quicksort(nums, low, j);
-			}
-			if (i < high) {
-				quicksort(nums, i, high);
-			}
-		}
-
-		private void swap(final int[] values, final int i, final int j) {
-			final int temp = values[i];
-			values[i] = values[j];
-			values[j] = temp;
+			}	
+			return n;
 		}
 
 	}
