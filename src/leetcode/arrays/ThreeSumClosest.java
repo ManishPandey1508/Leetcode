@@ -19,7 +19,7 @@ public class ThreeSumClosest {
 	public static void main(String[] args) {
 		int[] nums = { 1,1,-1,-1,3};
 
-		int res = new ThreeSumClosest().new Solution().threeSumClosest(nums, 1);
+		int res = new ThreeSumClosest().new Solution().threeSumClosest(nums, -1);
 
 		System.out.println(res);
 	}
