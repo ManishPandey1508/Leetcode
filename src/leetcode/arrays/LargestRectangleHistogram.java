@@ -47,8 +47,7 @@ public class LargestRectangleHistogram {
 					hstack.push(height[i]);
 					pstack.push(tempP);
 
-				}
-				
+				}				
 			}
 			while (!hstack.isEmpty()){
 				tempH = hstack.pop();
