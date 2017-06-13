@@ -13,11 +13,8 @@ You should return [1,2,3,6,9,8,7,4,5].
 */
 
 package leetcode.arrays;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import leetcode.utils.ArrayUtills;
 
 public class SpiralMatrix {
 
