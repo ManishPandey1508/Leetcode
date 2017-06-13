@@ -22,8 +22,7 @@ public class UniquePaths {
 		int res = new UniquePaths().new Solution().uniquePaths(m, n);
 		
 		System.out.println("Total Unique Path from Top Left to Bottom right is :  "+res);
-		
-
+	
 	}
 
 	class Solution {
