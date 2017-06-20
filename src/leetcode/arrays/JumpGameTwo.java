@@ -21,13 +21,19 @@ public class JumpGameTwo {
 		int[] nums = { 2, 1, 1, 1, 4 };
 		int noOfSteps = new JumpGameTwo().new Solution().jump(nums);
 		System.out.println("No of Steps" + noOfSteps);
+		int arr[] = {  2, 1, 1, 1, 4};
+		int r[] = new int[arr.length];
+		int result = new JumpGameTwo().new Solution().minJump(arr, r);
+		System.out.println(result);
+
 	}
 
 	class Solution {
 		public int jump(int[] nums) {
 
 			int minSteps = 0;// Minimum steps for reaching e
-			int longestDistPossible = 0; // longest distance possible from current index
+			int longestDistPossible = 0; // longest distance possible from
+											// current index
 			int Max = 0;// current max
 
 			for (int i = 0; i < nums.length - 1; i++) {
@@ -45,5 +51,27 @@ public class JumpGameTwo {
 			return minSteps;
 
 		}
+
+		public int minJump(int arr[], int result[]) {
+
+			int[] jump = new int[arr.length];
+			jump[0] = 0;
+			for (int i = 1; i < arr.length; i++) {
+				jump[i] = Integer.MAX_VALUE - 1;
+			}
+
+			for (int i = 1; i < arr.length; i++) {
+				for (int j = 0; j < i; j++) {
+					if (arr[j] + j >= i) {
+						if (jump[i] > jump[j] + 1) {
+							result[i] = j;
+							jump[i] = jump[j] + 1;
+						}
+					}
+				}
+			}
+			return jump[jump.length - 1];
+		}
+
 	}
 }
