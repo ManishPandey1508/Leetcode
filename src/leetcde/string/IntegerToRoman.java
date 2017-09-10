@@ -4,7 +4,7 @@ public class IntegerToRoman {
 
 	public static void main(String[] args) {
 
-		int num =39;
+		int num =3467;
 		String res = new IntegerToRoman().new Solution().intToRoman(num);
 		System.out.println("Result is   "+ res);
 		

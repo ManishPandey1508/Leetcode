@@ -25,7 +25,7 @@ public class UniquePathsTwo {
 
 	public static void main(String[] args) {
 		
-		int[][] obstacleGrid={{0,0},{1,1},{0,0}};
+		int[][] obstacleGrid={{0,0,0},{0,1,0},{0,0,0}};
 		
 		int res = new UniquePathsTwo().new Solution().uniquePathsWithObstacles(obstacleGrid);
 		System.out.println("Result "+ res);
@@ -49,9 +49,9 @@ public class UniquePathsTwo {
 	                else if(i == 0 && j == 0)
 	                    obstacleGrid[i][j] = 1;
 	                else if(i == 0)
-	                    obstacleGrid[i][j] = obstacleGrid[i][j - 1] * 1;// For row 0, if there are no paths to left cell, then its 0,else 1
+	                    obstacleGrid[i][j] = obstacleGrid[i][j - 1] ;// For row 0, if there are no paths to left cell, then its 0,else 1
 	                else if(j == 0)
-	                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] * 1;// For col 0, if there are no paths to upper cell, then its 0,else 1
+	                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] ;// For col 0, if there are no paths to upper cell, then its 0,else 1
 	                else
 	                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];}
 			}

@@ -4,22 +4,18 @@
 //Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.
 package leetcode.arrays;
 
-
-
 public class MatrixZeroes {
 
 	public static void main(String[] args) {
-		int[][] matrix = { { 1, 1, 1, 0 }, { 1, 1, 1, 0 }, { 1, 1, 0, 0 }, { 1, 0, 0, 0 } };
+		int[][] matrix = { { 1, 1, 1, 1 }, { 1, 1, 1, 1 }, { 1, 1, 1, 1 }, { 1, 1, 1, 0 } };
 		new MatrixZeroes().new Solution().setZeroes(matrix);
-		
+
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[0].length; j++) {
-				
+
 				System.out.println(matrix[i][j]);
-				
 			}
 		}
-
 	}
 
 	class Solution {

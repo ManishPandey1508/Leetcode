@@ -29,7 +29,7 @@ public class FirstMissingPositive {
 	public int firstMissingPositiveUsingPartition(int[] A) {
 		int n=A.length;
 		if(n==0) return 1; // No Elements
-		//Do the partition and put Negative at last position
+		//Do the partition and put Negative or zero on right most side of the array
 		int k=partition(A)+1;
 		System.out.println("K is "+ k);
 		ArrayUtills.printArray(A);
@@ -40,6 +40,7 @@ public class FirstMissingPositive {
 			temp=Math.abs(A[i]);
 			System.out.println("Temp is "+ temp);
 			if(temp<=k){
+				// Doing temp -1 because we have moved all 0 and negative value at the right most or after partition point
 				A[temp-1]=(A[temp-1]<0)?A[temp-1]:-A[temp-1];
 				System.out.println("A[Temp - 1] is "+ A[temp-1]);
 			}
@@ -69,7 +70,8 @@ public class FirstMissingPositive {
 	
 	public static void main(String[] args) {
 		FirstMissingPositive obj = new FirstMissingPositive();
-		int missed = obj.firstMissingPositiveUsingPartition(new int[] {3,4,-1,1,1,2,7,8});
+		//int missed = obj.firstMissingPositiveUsingPartition(new int[] {3,4,-1,1,1,2,7,8});
+		int missed = obj.firstMissingPositiveUsingPartition(new int[] {1,2,0});
 		System.out.println("The Missing element is " + missed);
 		
 		

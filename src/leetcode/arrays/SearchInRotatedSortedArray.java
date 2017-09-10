@@ -13,10 +13,12 @@ package leetcode.arrays;
 public class SearchInRotatedSortedArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//		int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-		int[] nums = {1,3};
-		int found = new SearchInRotatedSortedArray().new Solution().search(nums, 3	);
+		
+		int[] nums = { 4, 5,5,6,6, 6, 7, 0, 1, 2 };
+		//int[] nums = {1,3};
+		
+		int found = new SearchInRotatedSortedArray().new Solution().search(nums, 5	);
+		
 		System.out.println("Found is " + found);
 
 	}

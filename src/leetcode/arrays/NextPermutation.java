@@ -16,7 +16,7 @@ import leetcode.utils.ArrayUtills;
 public class NextPermutation {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int[] nums = {6,3,4,9,8,7,1};
 		ArrayUtills.printArray(nums);
 		new NextPermutation().new Solution().nextPermutation(nums);
